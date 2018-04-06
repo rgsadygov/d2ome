@@ -1,0 +1,69 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly PeakDetectionIntegration, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly XmlMzML, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=None, flags=None
+Class PeakDetectionIntegration.RetTimeRange: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Single Intensity : Public
+    Int32 RTi : Public
+    Boolean bRT : Public
+Class PeakDetectionIntegration.PeakProfile: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Single Intensity : Public
+    Single RetTime : Public
+    Int32 ScanNumber IsLong : Public
+Class PeakDetectionIntegration.PeakIndex: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 iMaxPosition : Public
+    Int32 iLeftEnd : Public
+    Int32 iRightEnd : Public
+    Single PeakArea : Public
+    Single RetTime : Public
+    Int32 FullScanNumber IsLong : Public
+    Int32 iChromNumber IsLong : Public
+Class PeakDetectionIntegration.DetectAndIntegratePeak: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, Double, Single, Double, System.IO.StreamWriter): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, Double, Single, Double): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, Double, Single): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    XmlMzML.MzML mzml : Public
+    Double dMassWindow : Public
+    Double MassAccuracyPPM : Public
+    Double setMassWindow : Public
+    Double mProton : Public
+    Double mHydrogen : Public
+    Double deltaC13 : Public
+    Double mDeuterium : Public
+    Single fElutionTimeWindow : Public
+    Single fPeakWidth : Public
+    Single fPeakArea : Public
+    Single fPeakHeight : Public
+    Single fPeakStart : Public
+    Single fPeakEnd : Public
+    Single fPeakThreshold : Public
+    System.IO.StreamWriter fpPeakOutPut : Public
+  Methods:
+    Close_mzML_file(): PrivateScope, Public, HideBySig
+    ReadIsotopes(Double, Int32, Double[,], Double[,]): PrivateScope, Public, HideBySig
+    ReadIsotopes(Int32, Double, Int32, Double[,]): PrivateScope, Public, HideBySig
+    BasePeakApex(Int32, Double, Int32, Int32): PrivateScope, Public, HideBySig
+    IntegratePeakTimeMz(Single, Int32, Double, Int32, Single*, Single*, Double[,], Double[]): PrivateScope, Public, HideBySig
+    FindPeakStartEnd(Single, Double, Int32, Single*, Single*, Int32*, Int32*, Single*, Single*, Single*, Single*, Single*, Double[]): PrivateScope, Public, HideBySig
+    FindPeakStartEnd_With_MassAccuracy_Charge(Single, Double, Int32, Single*, Single*, Int32*, Int32*, Single*, Single*, Single*, Single*, Single*, Double[]): PrivateScope, Public, HideBySig
+    FindmzPeakWidth(Single, Double, Int32, Single*, Single*, Int32*, Int32*, Single*, Single*, Single*, Single*, Single*, Double[], Int32): PrivateScope, Public, HideBySig
+    FindPeakPosition(Single, Double, Int32): PrivateScope, Public, HideBySig
+    BuildChromatogram(UInt16): PrivateScope, Public, HideBySig
+    MoverZ_Peak_Position_Width(FullScan, Double, Double): PrivateScope, Public, HideBySig
+    QSelect_Float(List`1): PrivateScope, Public, HideBySig

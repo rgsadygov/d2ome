@@ -1,0 +1,86 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly RateConstant, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly lbfgs_caller, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class RateConstant.SingleIsotopeCluster: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Single[] fIsotopeCluster : Public
+Class RateConstant.RateConstResults: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Single fRateConst : Public
+    Single fCorrel : Public
+    Single fRMRSS : Public
+    Single fI0_IsotpeAccuracy : Public
+    System.String sPeptide : Public
+    System.String sIsPeptideUnique : Public
+Class RateConstant.ProteinRateConstant: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, Single[], Single[], Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 nC : Public
+    Int32 nH : Public
+    Int32 nN : Public
+    Int32 nO : Public
+    Int32 nS : Public
+    Int32 nP : Public
+    Int32 fNparameter : Public
+    Int32 nExHydrogen : Public
+    Int32 nIsotopes : Public
+    Single[] fBodyWaterEnrichment : Public
+    Double[] fTimeCourse : Public
+    Double[] fUniqueTimePoints : Public
+    Double fScaleTime : Public
+    Single fRateConstant : Public
+    Single fCorrThreshold : Public
+    Single fRMSS_Threshold : Public
+    System.String workDirectory : Public
+    Boolean bReplicates : Public
+    Int32[] aiReplicateStructure : Public
+    Double[] dIsotopeMasses : Public
+    System.String szPeptide : Public
+  Methods:
+    ElementalComposition(String): PrivateScope, Public, HideBySig
+    ComputeRateConstant(String, Single[], Double[,]): PrivateScope, Public, HideBySig
+    ComputeRateFromI0(Single[], Single[], Double[], Int32, Single*, Single*): PrivateScope, Public, HideBySig
+    ReadFileFolder(): PrivateScope, Public, HideBySig
+    QuantFileReader(String): PrivateScope, Public, HideBySig
+    CheckANumber(Int32): PrivateScope, Public, HideBySig
+    NumberReader(SByte*, Int32): PrivateScope, Public, HideBySig
+    PearsonCorrelation(Single[], Single[], Int32): PrivateScope, Public, HideBySig
+    RMSS(Single[], Single[], Int32): PrivateScope, Public, HideBySig
+    PoissonIsotopesWithMasses(Int32, Single[], Int32, Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    PoissonIsotopes(Int32, Single[], Int32, Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    PoissonIsotopesMeanMasses(Int32, Single[], Double[], Int32, Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    HybridIsotopes(Int32, Single[], Double[], Int32, Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    ProcessTimePoints(Double[]): PrivateScope, Public, HideBySig
+    AnalyzeReplicates(List`1, List`1, Single[], Double[], Single[]): PrivateScope, Public, HideBySig
+    AverageReplicates(List`1, List`1, Single[], Double[], Single[], Int32*): PrivateScope, Public, HideBySig
+    NoReplicateExperiments(List`1, List`1, Single[], Double[], Single[], Int32*): PrivateScope, Public, HideBySig
+    ExperimentalTheoreticalIsotopeAccuracy(List`1, Single[]): PrivateScope, Public, HideBySig
+Class RateConstant.TheoreticalIsotopeCalculator: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Double[] dIsotopeMasses_FromCalculator : Public
+    System.String szPeptideInCalculator : Public
+  Methods:
+    AtomicComposition(String, Int32*, Int32*, Int32*, Int32*, Int32*, Int32*): PrivateScope, Public, HideBySig
+    Convolve(Double[], Double[]): PrivateScope, Public, HideBySig
+    Self_Convolve(Int32, Double[]): PrivateScope, Public, HideBySig
+    FourierIsotopes(Single[], Int32, Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    StartToComputeSequenceIsotopes(String, Single[]): PrivateScope, Public, HideBySig
+    StraightConvolution(Double[], Double[]): PrivateScope, Public, HideBySig
+    Caller_StraightConvolution(Single[], Int32, Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    DoRealFFT(): PrivateScope, Public, HideBySig
+    IsotopeMasses(Int32, Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    FourierIsotopes_Temp(Single[], Int32, Int32, Int32, Int32, Int32): PrivateScope, Public, HideBySig
+    AssignPeptideSequence(String): PrivateScope, Public, HideBySig
