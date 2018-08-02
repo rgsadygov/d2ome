@@ -153,6 +153,17 @@ int main(array<System::String ^> ^args)
 
 	i = args->Length;      //Fixing blank space in the output directory
 
+	if (i < 1) {
+		printf("please provide an input text file.\nYour command should look like:\n> d2ome.exe file.txt\n");
+		return 2;
+	}
+	else if(i != 4){
+		printf("The last 3 arguments are set to default values of 1, 1, and the output directory is the current location\n");
+		array<System::String ^> ^newargs = {args[0],"1","1","."};
+		args = newargs;
+	}
+
+
 	if(i > 4)
 	{
 		for(j=4; j < i; j++)
