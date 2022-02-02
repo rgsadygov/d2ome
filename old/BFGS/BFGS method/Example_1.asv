@@ -1,0 +1,4 @@
+function retval = Example_1(x)
+% example 1
+retval = -1/(x(1)^2+x(2)^2+2);
+
