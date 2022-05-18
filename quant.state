@@ -1,9 +1,11 @@
 mass_accuracy =  15.0 ppm  // mass accuracy: either in ppm or Da 
 MS1_Type = 1	// data type of MS1, 1 - centroid, 0 - profile  
-protein_score       = 40     //minimum protein score
+protein_score       = 40.0     //minimum protein score
 peptide_score =  20.0 	// minimum peptide score, ion score in Mascot, default is 1
 peptide_expectation = 0.05     // maximum peptide expectation in Mascot
 elutiontimewindow   =   1  // time window  (mins) to search for elution peak. From the time that highest scoring MS2 was triggered
 protein_consistency = 4  // minimum number of experiments for protein consistency
-peptide_consistency = 4   //mininum number of experiments for a peptide consistency
+peptide_consistency = 3   //mininum number of experiments for a peptide consistency
 NParam_RateConst_Fit = 1	// The model for fitting rate constant. Values are 1, and 2
+Labeling_time_unit = Days  // Labeling time unit  Days or Hours  
+
