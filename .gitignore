@@ -35,8 +35,8 @@
 
 *.csv
 //*.pdf
-*.png
+//*.png
 *log
 *.html
 *.txt
-*.jpg
+//*.jpg
