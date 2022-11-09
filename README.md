@@ -2,78 +2,41 @@
 
 The program, d2ome, uses heavy water labeling and LC-MS data to estimate protein degradation rate constants. To use the code first download the executables from the release page of the project. Next, follow the instructions in the "d2ome_Manual.pdf".
 
-## Preparing input to d2ome
 
-First, inputs should be generated for the program. The program uses mzML and mzIdentML formatted files for spectral and database search results, respectively. Assume
-there are six time points of heavy water labeling. At each time point, it is assumed there are two experiments (replicates or fractions). There is no limit on the number of replicates/fractions per time point. Assume the following raw files will be used:
-  - A0day_1.raw A0day_2.raw; A1day_1.raw A3day_2.raw; A3day_1.raw A3day_2.raw;A8day_1.raw A8day_2.raw; A15day_1.raw A15day_2.raw; A21day_0.raw A21day_1.raw
-  
-The first step is to generate mzML (mass spectra) files from raw files. MSConvert tool of Proteowizard converts the raw data into mzML formatted files. The Proteowizard version 3.0.10702 or later versions should be used. Earlier versions do not handle indexing of high mass accuracy spectra correctly. Parameter settings required for MSConvert are shown in Figure 1 (centroid MS1 data). In particular, “Write Index” should be checked, and “Use Zlib compression” should be unchecked. Output format should be set to “mzML”. Note, new developments, in particular, implementations of mass isotopomer dynamics[1] to improve rate constant estimations are carried for centroid MS1 data type. Therefore, using centroid data is preferable.
-
-![Figure 1](https://github.com/rgsadygov/d2ome/blob/master/old/images/Picture1.png)
-Figure 1. Input parameter set-up for MSConvert to generate mzML (centroid MS1) file from a (for example) raw file. Note that with the latest version of d2ome, generating MS1 scans in centroid mode is preferred.
-
-
-The second step is to do database searches to identify peptide sequences and proteins from the MS/MS data in the mzML file. If you are using Mascot’s “Mascot Daemon,” you will need to specify that the input file format is in mzML. This is specified in the Mascot’s parameter file. An example of a parameter file setup is shown in Figure 2. To export the database search results in mzIdentML format, using a setting similar to the one in Figure 3 A – B in the “Auto-export…” option of the Mascot Daemon. In the filtering options section of the “Auto-export..” “Group Proteins” should be unchecked, “Require bold red” should be checked, Figure 3 A. In the Protein Hit Information section, Figure 3 B, “Description” and “Length in residues”, both should be set to “check”. Uncheck the “Include query level information”, Figure 3 C.
-Currently, d2ome supports mass spectral data in either centroid or profile modes (in MS1) to quantify mass isotopomers. The centroid mode is preferable. In this mode, the processing is faster, and it uses new developments on mass isotopomer dynamics[1]. 
-
-![Figure 2](https://github.com/rgsadygov/d2ome/blob/master/old/images/Picture2.png)
-
-Figure 2. An example of a parameter setting using Mascot’s “Mascot Daemon” interface. It is important for d2ome to set the input file format to “mzML”.
-
-
-![Figure 3 A](https://github.com/rgsadygov/d2ome/blob/master/old/images/Picture3.png)
-
-Figure 3 A. The filtering section of the Mascot Daemon’s “Auto-export…” options. “Group Proteins” should be unchecked, “Require bold red” should be checked.
-
-![Figure 3 A](https://github.com/rgsadygov/d2ome/blob/master/old/images/Picture3B.png)
-
-Figure 3 B. Protein Hit Information section of Mascot Daemon’s “Auto-export…” options. The shown are the settings that are required for d2ome. The “Description” and “Length in residues”, both should be checked.
-
-![Figure 3 A](https://github.com/rgsadygov/d2ome/blob/master/old/images/Picture3c.png)
-
-Figure 3 C. Uncheck the “Include query level information”.
 
 ## Running d2ome using GUI. 
 
-Download all binaries into a single folder. These files should be as shown in Figure 4.
+    d2ome is a stand-alone software. You can start it by downloading and running d2ome_SetUp_GUI.exe. 
 
-
-![Figure 4 A](https://github.com/rgsadygov/d2ome/blob/master/old/images/Picture4.jpg)
-
-Figure 4. The binaries to run d2ome from either command line or using a GUI.
-
-The GUI and a Visualization Tool are started by d2ome_SetUp_GUI.exe. The application form is shown in Figure 5 A.
-
-The GUI automates filling of the mzML and mzid files from a folder. mzML and mzid file names should match, e.g., SomeFile.mzML, SomeFile.mzid. It is also possible to enter the files manually as in the previous GUI version. In addition, the GUI has an option to load the configuration information from files.txt and quant.state files. The autofill mode starts with “Browse” button. A user can copy and paste a folder path directly into the box. The GUI will sort the files into matching pairs (mzML and mzid). A Tab Controller like the one shown in Figure 5 B should appear. The user will fill the labeling duration (Time) and body water enrichment (BWE) cells for each experiment. Shown in Figure 5 B is an analysis consisting of 18 LC-MS experiments. The labeling time points are: (0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 14, 14, 21, 21). The user will specify the labeling time units (Days or Hours). There are nine labeling timepoints in this example. For each labeling timepoint, there are two biological replicates. The corresponding total body water enrichments are (0, 0.0, 0.0304, 0.0235, 0.0325, 0.0322, 0.0309, 0.0281, 0.0259, 0.0257, 0.0359, 0.0287, 0.0359, 0.0265, etc). 
+The GUI automates filling of the mzML and mzid files from a folder. mzML and mzid file names should match, e.g., SomeFile.mzML, SomeFile.mzid. It is also possible to enter the files manually as in the previous GUI version. In addition, the GUI has an option to load the configuration information from files.txt and quant.state files. The autofill mode starts with “Browse” button. A user can copy and paste a folder path directly into the box. The GUI will sort the files into matching pairs (mzML and mzid). A Tab Controller like the one shown in Figure 1 B should appear. The user will fill the labeling duration (Time) and body water enrichment (BWE) cells for each experiment. Shown in Figure 1 B is an analysis consisting of 18 LC-MS experiments. The labeling time points are: (0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 14, 14, 21, 21). The user will specify the labeling time units (Days or Hours). There are nine labeling timepoints in this example. For each labeling timepoint, there are two biological replicates. The corresponding total body water enrichments are (0, 0.0, 0.0304, 0.0235, 0.0325, 0.0322, 0.0309, 0.0281, 0.0259, 0.0257, 0.0359, 0.0287, 0.0359, 0.0265, etc). 
 
 Alternatively, the user can use the Manual Input button. In this mode, each of the mzML and mzid files and the corresponding labeling duration time and body water enrichment are entered separately. Click on the “Browse” button for the mzML file to find an mzML file. Enter the labeling duration (Time box) and body water enrichment (BWE box), and press the “Add” button to add the data to the list. 
 
 The “Sort” button will sort the input data and order it in a sequence with increasing labeling duration.
 Users can use the “Clear All” button to remove all entered files. The “Delete” button will remove selected files only.
 “BWE” designates the body water enrichment with D2O that corresponds to the specific labeling experiment. For example, if the body water enrichment is 7%, enter 0.07 into the box under “BWE”. “Rate Constant” method currently allows one options: one-parameter (determine the degradation rate constant). 
-Peptide consistency (Figure 5 B) is four. It means that only peptides that have been identified (passed the FDR threshold) and quantified in at least four different timepoints of labeling will be used in the estimation of rate constants for proteins. 
-Peptide score (Figure 5 B) is the threshold peptide score (Mascot Ion Score) in peptide-spectrum matches. Currently, the software uses results in the mzid format generated by Mascot. The threshold score is the ion score of Mascot. The program will check that the peptides passed the FDR threshold used in Mascot (using a reversed sequence database).
+Peptide consistency (Figure 1 B) is four. It means that only peptides that have been identified (passed the FDR threshold) and quantified in at least four different timepoints of labeling will be used in the estimation of rate constants for proteins. 
+Peptide score (Figure 1 B) is the threshold peptide score (Mascot Ion Score) in peptide-spectrum matches. Currently, the software uses results in the mzid format generated by Mascot. The threshold score is the ion score of Mascot. The program will check that the peptides passed the FDR threshold used in Mascot (using a reversed sequence database).
 
 The mass accuracy to be used in the peak detection.
 Enrichment estimation is an option to select between the two monoisotopic RIAs estimation techniques: complete isotope profiles and partial isotope profiles. The monoisotopic RIA is computed from the complete isotope profile of a peptide comprise of up to six mass isotopomers. On the contrary, the partial isotope profiles method utilizes the combination of the ratios from the first three mass isotopomers to improve the number of peptides that have high goodness of fit (R2).
 The GUI creates the files.txt and quant.state files (described below), input and parameter files, respectively.
-To select the output directory click on the “Browse” button at the bottom of the GUI. One can also copy and paste the folder path to the box next to the button. After the data have been entered, the output directory has been chosen; the quantification is started by the “Start” button, which is next to the Output Directory box, Figure 5 A. 
+To select the output directory click on the “Browse” button at the bottom of the GUI. One can also copy and paste the folder path to the box next to the button. After the data have been entered, the output directory has been chosen; the quantification is started by the “Start” button, which is next to the Output Directory box, Figure 1 A. 
 
 Note that the software expects that there are NO white spaces in the folder names. 
 
-![Figure 5 A](https://github.com/rgsadygov/d2ome/blob/master/old/images/Picture5.jpg)
+![Figure 1 A](https://github.com/rgsadygov/d2ome/blob/master/old/images/Picture5.jpg)
 
-Figure 5 A. d2ome GUI before data initialization.
-
-
-![Figure 5 B](https://github.com/rgsadygov/d2ome/blob/master/old/images/Picture5B.jpg)
-
-Figure 5 B. d2ome GUI in the Load configs mode.
+Figure 1 A. d2ome GUI before data initialization.
 
 
+![Figure 1 B](https://github.com/rgsadygov/d2ome/blob/master/old/images/Picture5B.jpg)
 
-## 3.	Running d2ome from command line. 
+Figure 1 B. d2ome GUI in the Load configs mode.
+
+
+
+## Running d2ome from command line. 
 - Preparing files.txt file 
 The location of the mzML and mzID files that were prepared in the first step plus information regarding the labeling duration and the enrichment level should be stored in a text file. The text file is then used when running the software. 
 The following is an examples of the text file(called files.txt in our example but can have any name): 
@@ -117,9 +80,7 @@ To overwrite the default parameters of d2ome, one prepares another file: quant.s
 
 Note also that d2ome is sensitive to what comes before the equal sign and the sign itself. These should not be changed. Also, double slash stands for comment and whatever after that in a line is not read by the software. Therefore, one is only expected to change the numbers.
 
-## Running the program from the command line
-
-- Download all binaries into a single folder. Assume, you have downloaded the files into the folder: C:\d2ome_exec. These files should be as shown in Figure 4.
+- Download all binaries into a single folder. Assume, you have downloaded the files into the folder: C:\d2ome_exec. 
 - From the directory where you have files.txt and quant.state (and possibly NEH.txt – to specify number of exchangeable hydrogens for each amino acid) files, use the command:
 
         >  E:\GUI_RUN>C:\d2ome_exec\d2ome.exe files.txt
@@ -148,12 +109,12 @@ Analyzed_Proteins.csv file contains a list of all identified proteins, and their
 
 ## Visualization
 
-Once the quantification is finished, there will be a message on the screen. Press the “Ok” button. Then press “Visualization” button on the Tab Controller. An output like  the one in Figure 6 should appear on the screen. The program automatically reads the results from the output directory, sorts the proteins by name, and shows the first protein, its rate constant, standard deviation, and its peptides, their characteristics (charge state, R2 of the fit, computed rates, etc.). To look at the results of theoretical fit, one can choose any of the peptides on the screen by “click” or “up”, “down” arrows. The figures for all peptides of all proteins can be saved (in jpeg format) by clicking on the button “Export all proteins”. Alternatively, the protein on the screen can be exported by clicking the “Export Protein_Name” button. The visualization tool can also be used to view previously quantified data. The GUI provides the opportunity to examine the quality of the label incorporation estimation from the data obtained by using the match between-runs (MBR). The user can visualize peptieds identeifeid by MBR by toggling the “Show zero ion score in red” check box. 
+Once the quantification is finished, there will be a message on the screen. Press the “Ok” button. Then press “Visualization” button on the Tab Controller. An output like  the one in Figure 2 should appear on the screen. The program automatically reads the results from the output directory, sorts the proteins by name, and shows the first protein, its rate constant, standard deviation, and its peptides, their characteristics (charge state, R2 of the fit, computed rates, etc.). To look at the results of theoretical fit, one can choose any of the peptides on the screen by “click” or “up”, “down” arrows. The figures for all peptides of all proteins can be saved (in jpeg format) by clicking on the button “Export all proteins”. Alternatively, the protein on the screen can be exported by clicking the “Export Protein_Name” button. The visualization tool can also be used to view previously quantified data. The GUI provides the opportunity to examine the quality of the label incorporation estimation from the data obtained by using the match between-runs (MBR). The user can visualize peptieds identeifeid by MBR by toggling the “Show zero ion score in red” check box. 
 
 
 ![Figure 6 A](https://github.com/rgsadygov/d2ome/blob/master/old/images/Picture10.png)
 
-Figure 6. Output results for protein, 1433E_MOUSE.
+Figure 2. Output results for protein, 1433E_MOUSE.
 
 ## Citation 
 The data processing in d2ome was described in[2]. The selection of mass isotopomers for label quantification is described in [1]. 
