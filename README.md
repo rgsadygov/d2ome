@@ -120,7 +120,7 @@ Figure 2. Output results for protein, 1433E_MOUSE.
 The data processing in d2ome was described in[2]. The selection of mass isotopomers for label quantification is described in [1]. 
 
 ## References
-
+- Deberneh, Henock M., and Rovshan G. Sadygov. "Software Tool for Visualization and Validation of Protein Turnover Rates Using Heavy Water Metabolic Labeling and LC-MS." International journal of molecular sciences 23.23 (2022): 14620.
 - Sadygov RG. Partial Isotope Profiles Are Sufficient for Protein Turnover Analysis Using Closed-Form Equations of Mass Isotopomer Dynamics, Anal Chem 2020;92:14747-14753.
 - Sadygov RG, Avva J, Rahman M et al. d2ome, Software for in Vivo Protein Turnover Analysis Using Heavy Water Labeling and LC-MS, Reveals Alterations of Hepatic Proteome Dynamics in a Mouse Model of NAFLD, J Proteome Res 2018;17:3740-3748.
 - Sadygov RG. Protein turnover models for LC-MS data of heavy water metabolic labeling, Brief Bioinform 2022.
