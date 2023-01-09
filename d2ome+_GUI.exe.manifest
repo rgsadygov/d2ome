@@ -42,26 +42,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="d2ome+_GUI.exe" size="237056">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="d2ome+_GUI.exe" size="239616">
       <assemblyIdentity name="d2ome+_GUI" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>HoTBDk2MB+0K8xYWYegU4k4Dv/woi9O/S5LSa9xn/Mg=</dsig:DigestValue>
+        <dsig:DigestValue>lJa7AMGYE4w4Tbiw3SUXCKCXqtL/V4evZISRvmHhUqw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IsotopomerDynamics.dll" size="166912">
-      <assemblyIdentity name="IsotopomerDynamics" version="1.0.8306.14769" language="neutral" processorArchitecture="amd64" />
+      <assemblyIdentity name="IsotopomerDynamics" version="1.0.8370.18136" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>yVb6RUMacanb5MHq15I2SvCCQYocqTU2S3qrwgMOEIY=</dsig:DigestValue>
+        <dsig:DigestValue>K6+GY9uOug9mmFOKmnKF/xV2gyzZkQUj1GEcrMQ+cjA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
