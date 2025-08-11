@@ -43,13 +43,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Align_Chrom_mzML.dll" size="111616">
-      <assemblyIdentity name="Align_Chrom_mzML" version="1.0.9307.18916" language="neutral" processorArchitecture="amd64" />
+      <assemblyIdentity name="Align_Chrom_mzML" version="1.0.9354.15635" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>DVN0/K5U/4U2KsWA7OlPwn1aKtQx9s5+fO/NnHJ8j88=</dsig:DigestValue>
+        <dsig:DigestValue>y42P+IZeATULw8MO9kyiLIfdF+av/xLzPpXiX5UN7/A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,19 +61,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>GFN+zvg7yttJ1KhLwxmtlF2mUxsGyzLDEvXOGQX4J+4=</dsig:DigestValue>
+        <dsig:DigestValue>R6hCi/WAJDna51nHGaKb7wwXb5PPM0tzWQTO7htgIAk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="d2ome+.exe" size="286208">
-      <assemblyIdentity name="d2ome+" version="1.0.9307.18920" language="neutral" processorArchitecture="amd64" />
+      <assemblyIdentity name="d2ome+" version="1.0.9354.15639" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>jnFKy4N+jL0EjZ0PdKos8juiM9dkgpJpJ26zzwapG1k=</dsig:DigestValue>
+        <dsig:DigestValue>g7XZJTEeP08Okba3KzCuAquzziz/Y4O79PFlI6JJ8fg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,7 +85,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>wFWbPclaTpmBEfOEgNeND+pSy0o5J08Lk3KylxDD1Ko=</dsig:DigestValue>
+        <dsig:DigestValue>kp9i8JL+DXIZZNbjwqPt2ERkMTImbXbYiRTLmF8XisM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -115,13 +115,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IsotopomerDynamics.dll" size="174592">
-      <assemblyIdentity name="IsotopomerDynamics" version="1.0.9307.18916" language="neutral" processorArchitecture="amd64" />
+      <assemblyIdentity name="IsotopomerDynamics" version="1.0.9354.15636" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>mAW11WrvT5ECfDNxmLPrAKol4pzWbkGKxmVER/kyMm8=</dsig:DigestValue>
+        <dsig:DigestValue>8Bf2t9BQPPbzEh56QiEBRbH1oKPhYs2hxkKNqMcfwEQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -151,13 +151,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="mzIdentML.dll" size="228352">
-      <assemblyIdentity name="mzIdentML" version="1.0.9307.18916" language="neutral" processorArchitecture="amd64" />
+      <assemblyIdentity name="mzIdentML" version="1.0.9354.15635" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>JjbP4gUJlvig9DJd3ousoCBkpoErn7wjEJIflYhRWYY=</dsig:DigestValue>
+        <dsig:DigestValue>unHAqCsNjJuwVNzS6c6cT8ecnERUiK3jjbEUXHGSKjY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -181,7 +181,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ZW9YR1SZAuhm7XqQskcHQq/dwGKeXcgjwmS/5MBJTLI=</dsig:DigestValue>
+        <dsig:DigestValue>pGUebK7fNOBTfpat/tPGKkP9CUfWydQX47Y8kNQTaRQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -199,25 +199,25 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PeptideMassAndFragments.dll" size="120320">
-      <assemblyIdentity name="PeptideMassAndFragments" version="1.0.9307.18916" language="neutral" processorArchitecture="amd64" />
+      <assemblyIdentity name="PeptideMassAndFragments" version="1.0.9354.15635" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>CajdvoSgTRCuh+jh3dLCx5JWE/SqsHJUdeCBh0TyqFE=</dsig:DigestValue>
+        <dsig:DigestValue>ifgG3cd+9W824+F+hN2gqheVATYJbAh2vz7sPbNJyx4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RateConstant.dll" size="256000">
-      <assemblyIdentity name="RateConstant" version="1.0.9307.18918" language="neutral" processorArchitecture="amd64" />
+      <assemblyIdentity name="RateConstant" version="1.0.9354.15638" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Htx0zc9IWFVm5trlz1H/LWZaYrP4T1V9GYZiI6LdBqQ=</dsig:DigestValue>
+        <dsig:DigestValue>3hLdtlafHsumYpKZQmLTkkFjaSkZ7gmHTX9C4voHmh0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
